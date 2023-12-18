@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+    
+   <head>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        .lastRolled {
+    border-radius: 50%;
+    background-color: rgb(78, 78, 78);
+    font-size: xx-large;
+    width: 48px;
+    height: 48px;
+    vertical-align: middle;
+    
+}
+        .lastRollContainer {
+            padding: 0px 20px;
+        }
+        
+        table {
+         margin: 0 auto;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 1px;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .roulette-board {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .number {
+            width: 50px;
+            height: 50px;
+            border: 1px solid #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            font-weight: bold;
+        }
+
+        .red {
+            background-color: #ff0000;
+            color: #fff;
+        }
+
+        .black {
+            background-color: #000;
+            color: #fff;
+        }
+        .green {
+            background-color: #1e9400;
+            color: #fff;
+        }
+        .verticalBoxes {
+            display: flex;
+            flex-direction: column;
+            transform: rotate(90deg);
+        }
+        </style>
+      
+   </head>
+   <body bgcolor="black" style="font-family:Georgia, 'Times New Roman', Times, serif">
+    <title>Roulette Statistics</title>
+      <table align="center" bgcolor="lightgray">
+      <thead>
+         <tr>
+            <td>
+               <div>
+                  <img src="https://coloradocasinonight.com/files/resized/240790/580;365;957e2b501fbc29d80cdf7c60b5c7edc027eb9fa2.jpg" class="banner"/>
+               </div>
+            </td>
+         </tr>
+      </thead>
+      <tbody>
+         <tr>
+            <td align="center">
+               <table>
+      <tbody>
+         <tr>
+            <td width="30%" align="center" valign="top">
+                <table width="100%" align="center"  >
+                    <thead >
+                        <tr>
+                            <td align="center"><h1>Last</h1></td>
+                        </tr>
+                    </thead>
+                    <tbody >
+                        <tr>
+                            <td  align="center" class="lastRollContainer" ><div class="lastRolled" align="center" valign="middle" ><b>36</b></div></td>
+                        </tr>
+                        <tr>
+                            <td  align="right" class="lastRollContainer" ><div class="lastRolled" align="center" style="margin-top:15px"><b>0</b></div></td>
+                        </tr>
+                        <tr>
+                            <td class="lastRollContainer"><div class="lastRolled" align="center" bgcolor="gray"><b>00</b></div></td>
+                        </tr>
+                        <tr>
+                            <td align="right" class="lastRollContainer"><div class="lastRolled" align="center" bgcolor="gray"><b>36</b></div></td>
+                        </tr>
+                        <tr>
+                            <td class="lastRollContainer"><div class="lastRolled" align="center" bgcolor="gray"><b>36</b></div></td>
+                        </tr>
+                        <tr>
+                            <td align="right" class="lastRollContainer"><div class="lastRolled" align="center" bgcolor="gray"><b>36</b></div></td>
+                        </tr>
+                        <tr>
+                            <td class="lastRollContainer"><div class="lastRolled" align="center" bgcolor="gray"><b>36</b></div></td>
+                        </tr>
+                    </tbody>
+                </table>
+               
+            </td>
+            
+            <td width="60%" bgcolor="" >
+               <table>
+                <tbody>
+         
+                    <td align="center">
+                <table  width="96%" align="center" )>
+                    <tbody>
+                        <tr>
+                            
+                                          <td align="center">
+                                             <h2 class="even">Total Rolls: 100</h2>
+                                          </td>
+                                          <td align="center">
+                                             <h2 class="odd">Overall | Last 20</h2>
+                                          
+            
+ </td>
+ 
+         </tr>
+         
+         <tr>
+            <td colspan="2">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="verticalBoxes">
+                                <div class="">1</div>
+                                <div class="">2</div>
+                                
+                            </div>
+                            <div class="verticalBoxes">
+                                <div class="number red">1</div>
+                                <div class="number black">2</div>
+                                
+                            </div>
+                            
+                        </td>
+                            <td>
+                                <div class="roulette-board">
+                                    <div class="row">
+                                        <div class="number green">0</div>
+                                        <div ></div>
+                                        <div class="number green">00</div>
+                                        <!-- Add more numbers as needed -->
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="number red">1</div>
+                                        <div class="number black">2</div>
+                                        <div class="number red">3</div>
+                                        <!-- Add more numbers as needed -->
+                                    </div>
+                                    <div class="row">
+                                        
+                                        <div class="number black">4</div>
+                                        <div class="number red">5</div>
+                                        <div class="number black">6</div>
+                                        <!-- Add more numbers as needed -->
+                                    </div>
+                                    <div class="row">
+                                        <div class="number red">7</div>
+                                        <div class="number black">8</div>
+                                        <div class="number red">9</div>
+                                        <!-- Add more numbers as needed -->
+                                    </div>
+                                    <div class="row">
+                                        
+                                        <div class="number black">10</div>
+                                        <div class="number black">11</div>
+                                        <div class="number red">12</div>
+                                        <!-- Add more numbers as needed -->
+                                    </div>
+                                    <div class="row">
+                                        <div class="number black">13</div>
+                                        <div class="number red">14</div>
+                                        <div class="number black">15</div>
+                                        <!-- Add more numbers as needed -->
+                                    </div>
+                                    <div class="row">
+                                        
+                                        <div class="number red">16</div>
+                                        <div class="number black">17</div>
+                                        <div class="number red">18</div>
+                                        <!-- Add more numbers as needed -->
+                                    </div>
+                                    <div class="row">
+                                        <div class="number black">19</div>
+                                        <div class="number black">20</div>
+                                        <div class="number red">21</div>
+                                        <!-- Add more numbers as needed -->
+                                    </div>
+                                    <div class="row">
+                                        
+                                        <div class="number black">22</div>
+                                        <div class="number red">23</div>
+                                        <div class="number black">24</div>
+                                        <!-- Add more numbers as needed -->
+                                    </div>
+                                    <div class="row">
+                                        <div class="number red">25</div>
+                                        <div class="number black">26</div>
+                                        <div class="number red">27</div>
+                                        <!-- Add more numbers as needed -->
+                                    </div>
+                                    <div class="row">
+                                        
+                                        <div class="number red">28</div>
+                                        <div class="number black">29</div>
+                                        <div class="number red">30</div>
+                                        <!-- Add more numbers as needed -->
+                                    </div>
+                                    <div class="row">
+                                        <div class="number black">31</div>
+                                        <div class="number red">32</div>
+                                        <div class="number black">33</div>
+                                        <!-- Add more numbers as needed -->
+                                    </div>
+                                    <div class="row">
+                                        
+                                        <div class="number red">34</div>
+                                        <div class="number black">35</div>
+                                        <div class="number red">36</div>
+                                        <!-- Add more numbers as needed -->
+                                    </div>
+                                    <!-- Add more rows as needed -->
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+   </body>
+</html>
