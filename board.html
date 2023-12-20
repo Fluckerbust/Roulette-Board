@@ -4,35 +4,147 @@
    <head>
     <link rel="stylesheet" href="./style.css">
     <style>
-        .lastRolled {
-    border-radius: 50%;
-    background-color: rgb(78, 78, 78);
-    font-size: xx-large;
-    width: 48px;
-    height: 48px;
-    vertical-align: middle;
-    
-}
-        .lastRollContainer {
-            padding: 0px 20px;
-        }
         
-        table {
+        
+      
+      .container {
+         border-radius: 0px;
+         background: linear-gradient(90deg, rgba(0,0,0) 0%, rgb(0, 0, 0) 2%,rgb(177, 167, 167) 5%, rgb(177, 167, 167) 95%, rgb(0, 0, 0) 98%,rgba(0,0,0) 100%);
+         width: 675px;
+         max-height: 800px;
          margin: 0 auto;
-        }
-      body {
-         background-color: black;
+         padding: 15px;
       }
+      .ballBlack {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border-radius: 50%;
+  position: relative;
+  background: radial-gradient(circle at 50% 120%,  #323232, #0a0a0a 80%, #000000 100%);
+  
+}
+.ballRed {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border-radius: 50%;
+  position: relative;
+  background: radial-gradient(circle at 50% 120%,  #323232, #741717 80%, #741717 100%);
+}
+.ballGreen {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border-radius: 50%;
+  position: relative;
+  background: radial-gradient(circle at 50% 120%,  #323232, #1b790f 80%, #1b790f 100%);
+}
+.ball:before {
+  content: "";
+  position: absolute;
+  background: radial-gradient(circle at 50% 120%,  rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+  bottom: 2.5%;
+  left: 5%;
+  opacity: 0.6;
+  height: 100%;
+  width: 90%;
+  -webkit-filter: blur(5px);
+  z-index: 2;
+}
+.ball:after {
+  width: 100%;
+  height: 100%;
+  content: "";
+  position: absolute;
+  top: 5%;
+  left: 10%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 50%,  rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 14%, rgba(255, 255, 255, 0) 24%);
+  -webkit-transform: translateX(-80px) translateY(-90px) skewX(-20deg);
+  -moz-transform: translateX(-80px) translateY(-90px) skewX(-20deg);
+  -ms-transform: translateX(-80px) translateY(-90px) skewX(-20deg);
+  -o-transform: translateX(-80px) translateY(-90px) skewX(-20deg);
+  transform: translateX(-80px) translateY(-90px) skewX(-20deg);
+  -webkit-filter: blur(10px);
+}
+
+.ball .shadow {
+position: absolute;
+width: 100%;
+height: 100%;
+background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
+
+z-index: 3;
+}
+.stage {
+  width: 65px;
+  height: 65px;
+  display: inline-block;
+  margin: 20px;
+ 
+}
+body {
+  width: 1000px;
+  margin: 0 auto;
+  background-color: #000000;
+  background-repeat: no-repeat;
+  display: flex;
+   
+}
+.ballText {
+   color: white;
+   font-size: xx-large;
+   padding: 10px 10px 0 10px;
+}
+.blurred-box{
+   border-radius: 10px;
+   width: 90%;
+   height: 800px;
+   background: blur(10px);
+   background-color: rgba(25, 25, 25, 0.548);
+   display: flex;
+   flex-direction: column;
+   margin-left: 25px;
+  padding: 0 10px;
+  box-shadow: rgb(0, 0, 0) 3px 3px 6px 0px inset, rgba(0, 0, 0, 0.5) -3px -3px 6px 1px inset;
+   align-items: center;
+}
+.lastRolledSection {
+   display: flexbox;
+  
+   width:25%;
+   align-self: center;
+   margin: 0 auto;
+  
+}
+.statSection {
+   
+   
+   width: 75%;
+   margin: 0 auto;
+
+}
+
+.boxContainer {
+   border-radius: 15px;
+   box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(255, 255, 255, 0.06) 0px 2px 1px, rgba(255, 255, 255, 0.09) 0px 4px 2px, rgba(255, 255, 255, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
         </style>
       
    </head>
    <body bgcolor="black" style="font-family:Georgia, 'Times New Roman', Times, serif">
     <title>Roulette Statistics</title>
-      <table align="center" bgcolor="lightgray">
+      <table  align="center" >
       <thead>
          <tr>
             <td>
-               <div>
+               <div align="center">
                   <img src="https://coloradocasinonight.com/files/resized/240790/580;365;957e2b501fbc29d80cdf7c60b5c7edc027eb9fa2.jpg" class="banner"/>
                </div>
             </td>
@@ -41,11 +153,11 @@
       <tbody>
          <tr>
             <td align="center">
-               <table>
+               <table class="container">
       <tbody>
          <tr>
-            <td width="30%" align="center" valign="top">
-                <table width="100%" align="center"  >
+            <td class="lastRolledSection" valign="top">
+                <table width="100%" align="center" class="blurred-box" >
                     <thead >
                         <tr>
                             <td align="center"><h1>Last</h1></td>
@@ -53,33 +165,25 @@
                     </thead>
                     <tbody >
                         <tr>
-                            <td  align="center" class="lastRollContainer" ><div class="lastRolled" align="center" valign="middle" ><b>36</b></div></td>
-                        </tr>
-                        <tr>
-                            <td  align="right" class="lastRollContainer" ><div class="lastRolled" align="center" style="margin-top:15px"><b>0</b></div></td>
-                        </tr>
-                        <tr>
-                            <td class="lastRollContainer"><div class="lastRolled" align="center" bgcolor="gray"><b>00</b></div></td>
-                        </tr>
-                        <tr>
-                            <td align="right" class="lastRollContainer"><div class="lastRolled" align="center" bgcolor="gray"><b>36</b></div></td>
-                        </tr>
-                        <tr>
-                            <td class="lastRollContainer"><div class="lastRolled" align="center" bgcolor="gray"><b>36</b></div></td>
-                        </tr>
-                        <tr>
-                            <td align="right" class="lastRollContainer"><div class="lastRolled" align="center" bgcolor="gray"><b>36</b></div></td>
-                        </tr>
-                        <tr>
-                            <td class="lastRollContainer"><div class="lastRolled" align="center" bgcolor="gray"><b>36</b></div></td>
+                            <td  align="center" class="lastRollContainer" >
+                              <section class="stage">
+                                 <figure class="ballBlack"><span class="shadow"><div class="ballText">10</div></span></figure>
+                               </section>
+                               <section class="stage">
+                                 <figure class="ballRed"><span class="shadow"><div class="ballText">36</div></span></figure>
+                               </section>
+                               <section class="stage">
+                                 <figure class="ballGreen"><span class="shadow"><div class="ballText">00</div></span></figure>
+                               </section>
+                              </td>
                         </tr>
                     </tbody>
                 </table>
                
             </td>
             
-            <td width="60%" bgcolor="" >
-               <table>
+            <td class="statSection"  >
+               <table class="blurred-box">
                 <tbody>
          
                     <td align="center">
@@ -98,13 +202,13 @@
  
          </tr>
          
-         <tr>
-            <td align="center" bgcolor="red">
+         <tr >
+            <td align="center" bgcolor="red" class="boxContainer">
                 
-                             <div class="red" align="center">Red:</div><div class="red" align="center"> 60% | 50%</div>
+                             <div  align="center">Red:</div><div class="red" align="center"> 60% | 50%</div>
                           </td>
-                          <td align="center" bgcolor="black" style="color: white;">
-                            <div class="black" align="center" >Black:</div><div class="black" align="center"> 60% | 50%</div>
+                          <td class="boxContainer" align="center" bgcolor="black" style="color: white;">
+                            <div  align="center" >Black:</div><div class="black" align="center"> 60% | 50%</div>
                           </td>
                     
             </tr>
@@ -114,18 +218,18 @@
          </tr>
          <tr>
             <td align="center"> 
-            <table width="100%" align="center">
+            <table width="100%" align="center" >
                <tbody>
                   <tr>
-                     <td width="33%">
+                     <td width="33%" class="boxContainer">
                         <div class="even" align="center">Even:</div>
                         <div class="even" align="center"> 60% | 50%</div>
                      </td>
-                     <td width="33%">
+                     <td width="33%" class="boxContainer">
                         <div align="center" class="odd">Odd:</div> 
                         <div class="odd" align="center">60% | 50%</div>
                      </td>
-                     <td width="33%">
+                     <td width="33%" class="boxContainer">
                         <div class="zeroes" align="center">Zeroes:</div>
                         <div class="zeroes" align="center">60% | 50%</div>
                      </td>
