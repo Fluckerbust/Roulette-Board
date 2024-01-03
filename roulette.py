@@ -560,5 +560,3 @@ thirdTwelve()
 firstRow()
 secondRow()
 thirdRow()
-
-print(numbers["10"]["counter"])
