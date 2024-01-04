@@ -1,4 +1,7 @@
-spins = [10, 1, 5, 35, 22, 0, 00, 10, 35, 22, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+from collections import OrderedDict
+from operator import getitem
+
+spins = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36,"0"]
 
 numbers = {
   "1": {
@@ -305,7 +308,7 @@ numbers = {
       "row": 0,
       "align": "center",
       
-"counter": spins.count(0)
+"counter": spins.count("0")
       },
   "00": {
       "color": "green",
@@ -313,7 +316,7 @@ numbers = {
       "twelve": 0,
       "row": 0,
       "align": "center",
-      "counter": spins.count(00)
+      "counter": spins.count("00")
 
   }
 
@@ -543,8 +546,18 @@ def thirdRow():
   return thirdRowPercent
 
 
+def hotCold():
+   sum = 0
+   for key, value in numbers.items():
+      if value and 'counter' in value.keys():
+         sum+= value['counter']
+   print(sum)
    
+   average = sum/len(spins)
+
+
    
+
 #spins = [10, 1, 5, 35, 22, 0, 00, 10, 35, 22, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
 
 
@@ -560,3 +573,10 @@ thirdTwelve()
 firstRow()
 secondRow()
 thirdRow()
+
+print(numbers["00"]["counter"])
+print(totalCount)
+hotCold()
+
+
+

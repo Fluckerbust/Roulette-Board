@@ -1,0 +1,352 @@
+$bubble-count: 50;
+$sway-type: "sway-left-to-right", "sway-right-to-left";
+
+@function random_range($min, $max) {
+  $rand: random();
+  $random_range: $min + floor($rand * (($max - $min) + 1));
+  @return $random_range;
+}
+
+@function sample($list) {
+  @return nth($list, random(length($list)));
+}
+
+.bubbles {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+
+
+@keyframes float-up {
+  0% {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+  25% {
+    -webkit-transform: rotate3d(0, 0, 1, 90deg);
+    transform: rotate3d(0, 0, 1, 90deg);
+  }
+  50% {
+    -webkit-transform: rotate3d(0, 0, 1, 180deg);
+    transform: rotate3d(0, 0, 1, 180deg);
+  }
+  75% {
+    -webkit-transform: rotate3d(0, 0, 1, 270deg);
+    transform: rotate3d(0, 0, 1, 270deg);
+  }
+  100% {
+    -webkit-transform: rotate3d(0, 0, 1, 360deg);
+    transform: rotate3d(0, 0, 1, 360deg);
+    transform: translateY(175vh);
+  }
+  
+  
+}
+
+@keyframes sway-left-to-right {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes sway-right-to-left {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+  
+}
+.dashed-circle {
+  
+  
+  
+  background:#991717;
+  border: 13px dashed white;
+  border-radius: 50%;
+  line-height: 100px;
+  text-align: center;
+  font-family: Georgia;
+  font-size:1.5em;
+  color: white;
+  position: absolute;
+  left: var(--bubble-left-offset);
+  top: -75%;
+  display: block;
+  width: var(--bubble-radius);
+  height: var(--bubble-radius);
+  
+  animation: float-up var(--bubble-float-duration) var(--bubble-float-delay) ease-in infinite;
+
+  &::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: hsla(183, 94%, 76%, 0.3);
+    border-radius: inherit;
+    animation: var(--bubble-sway-type) var(--bubble-sway-duration) var(--bubble-sway-delay) ease-in-out alternate infinite;
+  }
+
+  @for $i from 0 through $bubble-count {
+    &:nth-child(#{$i}) {
+      --bubble-left-offset: #{random_range(0vw, 100vw)};
+      --bubble-radius: #{random_range(10vw, 10vw)};
+      --bubble-float-duration: #{random_range(15s, 25s)};
+      --bubble-sway-duration: #{random_range(4s, 6s)};
+      --bubble-float-delay: #{random_range(0s, 4s)};
+      --bubble-sway-delay: #
+      --bubble-sway-type: #{sample($sway-type)};
+    }
+  }
+
+}
+.dashed-circle:before {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+ 
+  border-radius: 50%;
+  background: #991717;
+  content: '';
+}
+.dashed-circle:after {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 5px;
+  border: 3px dashed white;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.4);
+  content: '';
+}
+.dashed-circle-blue {
+  
+  
+  
+  background:#1d4276;
+  border: 13px dashed white;
+  border-radius: 50%;
+  line-height:100px;
+  text-align: center;
+  font-family: Georgia;
+  font-size:1.5em;
+  color: white;
+  position: absolute;
+  left: var(--bubble-left-offset);
+  top: -75%;
+  display: block;
+  width: var(--bubble-radius);
+  height: var(--bubble-radius);
+  
+  animation: float-up var(--bubble-float-duration) var(--bubble-float-delay) ease-in infinite;
+
+  &::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: hsla(183, 94%, 76%, 0.3);
+    border-radius: inherit;
+    animation: var(--bubble-sway-type) var(--bubble-sway-duration) var(--bubble-sway-delay) ease-in-out alternate infinite;
+  }
+
+  @for $i from 0 through $bubble-count {
+    &:nth-child(#{$i}) {
+      --bubble-left-offset: #{random_range(-10vw, 110vw)};
+      --bubble-radius: #{random_range(10vw, 10vw)};
+      --bubble-float-duration: #{random_range(15s, 25s)};
+      --bubble-sway-duration: #{random_range(4s, 6s)};
+      --bubble-float-delay: #{random_range(0s, 8s)};
+      --bubble-sway-delay: #
+      --bubble-sway-type: #{sample($sway-type)};
+    }
+  }
+
+}
+.dashed-circle-blue:before {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+ 
+  border-radius: 50%;
+  background: #1d4276;
+  content: '';
+}
+.dashed-circle-blue:after {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 5px;
+  border: 3px dashed white;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.4);
+  content: '';
+}
+.dashed-circle-green {
+  
+  
+  
+  background:#248721;
+  border: 13px dashed white;
+  border-radius: 50%;
+  line-height: 100px;
+  text-align: center;
+  font-family: Georgia;
+  font-size:1.5em;
+  color: white;
+  position: absolute;
+  left: var(--bubble-left-offset);
+  top: -75%;
+  display: block;
+  width: var(--bubble-radius);
+  height: var(--bubble-radius);
+  
+  animation: float-up var(--bubble-float-duration) var(--bubble-float-delay) ease-in infinite;
+
+  &::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: hsla(183, 94%, 76%, 0.3);
+    border-radius: inherit;
+    animation: var(--bubble-sway-type) var(--bubble-sway-duration) var(--bubble-sway-delay) ease-in-out alternate infinite;
+  }
+
+  @for $i from 0 through $bubble-count {
+    &:nth-child(#{$i}) {
+      --bubble-left-offset: #{random_range(0vw, 100vw)};
+      --bubble-radius: #{random_range(10vw, 10vw)};
+      --bubble-float-duration: #{random_range(15s, 25s)};
+      --bubble-sway-duration: #{random_range(4s, 6s)};
+      --bubble-float-delay: #{random_range(0s, 8s)};
+      --bubble-sway-delay: #
+      --bubble-sway-type: #{sample($sway-type)};
+    }
+  }
+
+}
+.dashed-circle-green:before {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+ 
+  border-radius: 50%;
+  background: #248721;
+  content: '';
+}
+.dashed-circle-green:after {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 5px;
+  border: 3px dashed white;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.4);
+  content: '';
+}
+.dashed-circle-black {
+  
+  
+  
+  background:#000000;
+  border: 13px dashed white;
+  border-radius: 50%;
+  line-height: 100px;
+  text-align: center;
+  font-family: Georgia;
+  font-size:1.5em;
+  color: white;
+  position: absolute;
+  left: var(--bubble-left-offset);
+  top: -75%;
+  display: block;
+  width: var(--bubble-radius);
+  height: var(--bubble-radius);
+  
+  animation: float-up var(--bubble-float-duration) var(--bubble-float-delay) ease-in infinite;
+
+  &::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: hsla(183, 94%, 76%, 0.3);
+    border-radius: inherit;
+    animation: var(--bubble-sway-type) var(--bubble-sway-duration) var(--bubble-sway-delay) ease-in-out alternate infinite;
+  }
+
+  @for $i from 0 through $bubble-count {
+    &:nth-child(#{$i}) {
+      --bubble-left-offset: #{random_range(0vw, 100vw)};
+      --bubble-radius: #{random_range(10vw, 10vw)};
+      --bubble-float-duration: #{random_range(15s, 25s)};
+      --bubble-sway-duration: #{random_range(4s, 6s)};
+      --bubble-float-delay: #{random_range(0s, 8s)};
+      --bubble-sway-delay: #
+      --bubble-sway-type: #{sample($sway-type)};
+    }
+  }
+
+}
+.dashed-circle-black:before {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+ 
+  border-radius: 50%;
+  background: #000000;
+  content: '';
+}
+.dashed-circle-black:after {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 5px;
+  border: 3px dashed white;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.4);
+  content: '';
+}
