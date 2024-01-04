@@ -2,18 +2,20 @@
 <html>
     
    <head>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style.scss">
     <style>
         
         
       
       .container {
          border-radius: 0px;
-         background: linear-gradient(90deg, rgba(0,0,0) 0%, rgb(0, 0, 0) 2%,rgb(177, 167, 167) 5%, rgb(177, 167, 167) 95%, rgb(0, 0, 0) 98%,rgba(0,0,0) 100%);
+         background: linear-gradient(90deg, rgba(0, 0, 0, 0.795) 0%, rgba(0, 0, 0, 0.795) 2%,rgba(255, 255, 255, 0.274) 5%, rgba(255, 255, 255, 0.253) 95%, rgba(0, 0, 0, 0.795) 98%,rgba(0, 0, 0, 0.795) 100%);
          width: 675px;
-         max-height: 800px;
+         height: 950px;
+         max-height: 1000px;
          margin: 0 auto;
          padding: 15px;
+         backdrop-filter: blur(20px);
       }
       .ballBlack {
   display: inline-block;
@@ -91,9 +93,13 @@ z-index: 3;
 body {
   width: 1000px;
   margin: 0 auto;
-  background-color: #000000;
+  background-color: rgba(0, 0, 0, 0.795);
   background-repeat: no-repeat;
   display: flex;
+  background-image: url(./chips.gif);
+  color: white;
+  background-size: cover;
+  vertical-align: middle;
    
 }
 .ballText {
@@ -104,15 +110,16 @@ body {
 .blurred-box{
    border-radius: 10px;
    width: 90%;
-   height: 800px;
+   height: 900px;
    background: blur(10px);
-   background-color: rgba(25, 25, 25, 0.548);
+   background-color: rgba(24, 26, 33, .85);
    display: flex;
    flex-direction: column;
    margin-left: 25px;
   padding: 0 10px;
-  box-shadow: rgb(0, 0, 0) 3px 3px 6px 0px inset, rgba(0, 0, 0, 0.5) -3px -3px 6px 1px inset;
+  box-shadow: rgb(0, 0, 0) 3px 3px 6px 0px inset, rgba(0, 0, 0, 0.75) -3px -3px 6px 1px inset;
    align-items: center;
+   
 }
 .lastRolledSection {
    display: flexbox;
@@ -130,29 +137,72 @@ body {
 
 }
 
-.boxContainer {
+.boxContainerRed {
    border-radius: 15px;
-   box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(255, 255, 255, 0.06) 0px 2px 1px, rgba(255, 255, 255, 0.09) 0px 4px 2px, rgba(255, 255, 255, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+   box-shadow:  rgba(0, 0, 0, 0.61) 0px -23px 25px 0px inset, rgba(255, 255, 255, 0.226) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.37) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.473) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.041) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+   border: .5px solid rgba(0, 0, 0, 1);
+padding: 5px;
+
 }
+
+.boxContainerBlack {
+   border-radius: 15px;
+   box-shadow:  rgba(0, 0, 0, 0.61) 0px -23px 25px 0px inset, rgba(255, 255, 255, 0.233) 0px -36px 30px 0px inset, rgba(255, 255, 255, 0.041) 0px -79px 40px 0px inset, rgba(20, 20, 20, 0.856) 0px 2px 1px, rgba(0, 0, 0, 0.692) 0px 4px 2px, rgba(0, 0, 0, 0.041) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+   border: .5px solid rgba(255, 255, 255, .8);
+   padding: 5px;
+
+   
+}
+
+.banner {
+   border-radius: 0px ;
+         background: linear-gradient(0deg, rgba(0,0,0) 0%, rgb(0, 0, 0) 2%,rgba(67, 67, 67,.4) 5%, rgba(177, 167, 167,.4) 95%, rgb(0, 0, 0) 98%,rgba(0,0,0) 100%);
+         width: 600px;
+         max-height: 400px;
+         margin: 0 auto;
+         padding: 15px;
+         backdrop-filter: blur(20px);
+}
+.twelves {
+   border-radius: 15px;
+   box-shadow: rgba(189, 146, 146, 0.397) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.85) 0px -36px 30px 0px inset, rgba(255, 255, 255, 0.9) 0px -79px 40px 0px inset, rgba(255, 255, 255, 0.06) 0px 2px 1px, rgba(255, 255, 255, 0.09) 0px 4px 2px, rgba(255, 255, 255, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(255, 255, 255, 0.09) 0px 32px 16px;
+   padding: 5px;
+}
+.rows {
+   border-radius: 15px;
+   box-shadow: rgba(189, 146, 146, 0.397) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.85) 0px -36px 30px 0px inset, rgba(255, 255, 255, 0.9) 0px -79px 40px 0px inset, rgba(255, 255, 255, 0.06) 0px 2px 1px, rgba(255, 255, 255, 0.09) 0px 4px 2px, rgba(255, 255, 255, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(255, 255, 255, 0.09) 0px 32px 16px;
+   padding: 5px;
+}
+.evenOdd {
+   border-radius: 15px;
+   box-shadow: rgba(189, 146, 146, 0.397) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.85) 0px -36px 30px 0px inset, rgba(255, 255, 255, 0.9) 0px -79px 40px 0px inset, rgba(255, 255, 255, 0.06) 0px 2px 1px, rgba(255, 255, 255, 0.09) 0px 4px 2px, rgba(255, 255, 255, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(255, 255, 255, 0.09) 0px 32px 16px;
+   padding: 5px;
+}
+
+
 
         </style>
       
    </head>
-   <body bgcolor="black" style="font-family:Georgia, 'Times New Roman', Times, serif">
+   <body bgcolor="black" style="font-family:Georgia, 'Times New Roman', Times, serif" >
+      
     <title>Roulette Statistics</title>
+    
       <table  align="center" >
       <thead>
          <tr>
-            <td>
-               <div align="center">
-                  <img src="https://coloradocasinonight.com/files/resized/240790/580;365;957e2b501fbc29d80cdf7c60b5c7edc027eb9fa2.jpg" class="banner"/>
+            <td class="banner" >
+               <div align="center" >
+                  <img src="https://coloradocasinonight.com/files/resized/240790/580;365;957e2b501fbc29d80cdf7c60b5c7edc027eb9fa2.jpg" height="300px" />
                </div>
+               
             </td>
          </tr>
       </thead>
       <tbody>
          <tr>
             <td align="center">
+               
                <table class="container">
       <tbody>
          <tr>
@@ -182,12 +232,12 @@ body {
                
             </td>
             
-            <td class="statSection"  >
-               <table class="blurred-box">
+            <td class="statSection"  valign="top">
+               <table class="blurred-box"  >
                 <tbody>
          
                     <td align="center">
-                <table  width="96%" align="center" )>
+                <table  width="96%" align="center" >
                     <tbody>
                         <tr>
                             
@@ -195,7 +245,7 @@ body {
                                              <h2 class="even">Total Rolls: 100</h2>
                                           </td>
                                           <td align="center">
-                                             <h2 class="odd">Overall | Last 20</h2>
+                                             <h3 class="odd">Overall&nbsp;|&nbsp;Last&nbsp;20</h3>
                                           
             
  </td>
@@ -203,11 +253,11 @@ body {
          </tr>
          
          <tr >
-            <td align="center" bgcolor="red" class="boxContainer">
+            <td align="center" bgcolor="red" class="boxContainerRed" width="50%" >
                 
-                             <div  align="center">Red:</div><div class="red" align="center"> 60% | 50%</div>
+                             <div  align="center">Red:</div><div  class="red" align="center"> 60% | 50%</div>
                           </td>
-                          <td class="boxContainer" align="center" bgcolor="black" style="color: white;">
+                          <td class="boxContainerBlack" align="center" bgcolor="black" style="color: white; margin-left: 1em;"id="black" width="50%">
                             <div  align="center" >Black:</div><div class="black" align="center"> 60% | 50%</div>
                           </td>
                     
@@ -218,18 +268,18 @@ body {
          </tr>
          <tr>
             <td align="center"> 
-            <table width="100%" align="center" >
+            <table width="100%" align="center" style="margin: 10px 0px;">
                <tbody>
                   <tr>
-                     <td width="33%" class="boxContainer">
+                     <td width="33%" class="evenOdd">
                         <div class="even" align="center">Even:</div>
                         <div class="even" align="center"> 60% | 50%</div>
                      </td>
-                     <td width="33%" class="boxContainer">
+                     <td width="33%" class="evenOdd">
                         <div align="center" class="odd">Odd:</div> 
                         <div class="odd" align="center">60% | 50%</div>
                      </td>
-                     <td width="33%" class="boxContainer">
+                     <td width="33%" class="evenOdd">
                         <div class="zeroes" align="center">Zeroes:</div>
                         <div class="zeroes" align="center">60% | 50%</div>
                      </td>
@@ -240,17 +290,17 @@ body {
          </tr>
          <tr>
             <td align="center">
-            <table width="100%" align="center">
+            <table width="100%" align="center" style="margin: 10px 0px;"> 
                <tbody>
                   <tr>
-                     <td width="33%">
-                        <div align="center" class="even">1st 12:</div><div align="center" class="even"> 60% | 50%</div>
+                     <td width="33%" class="twelves">
+                        <div align="center" >1st 12:</div><div align="center" class="even"> 60% | 50%</div>
                      </td>
-                     <td width="33%">
-                        <div align="center" class="even">2nd 12:</div><div align="center" class="even"> 60% | 50%</div>
+                     <td width="33%" class="twelves">
+                        <div align="center" >2nd 12:</div><div align="center" class="even"> 60% | 50%</div>
                      </td>
-                     <td width="33%">
-                        <div align="center" class="even">3rd 12:</div><div align="center" class="even"> 60% | 50%</div>
+                     <td width="33%" class="twelves">
+                        <div align="center" >3rd 12:</div><div align="center" class="even"> 60% | 50%</div>
                      </td>
                   </tr>
                </tbody>
@@ -259,59 +309,18 @@ body {
          </tr>
          <tr>
             <td align="center"> 
-            <table width="100%" align="center">
+            <table width="100%" align="center" style="margin: 10px 0px;">
                <tbody>
                   <tr>
-                    <td width="33%">
+                    <td width="33%" class="rows">
                         <div align="center" class="even">Row 1:</div><div align="center" class="even"> 60% | 50%</div>
                      </td>
-                     <td width="33%">
+                     <td width="33%" class="rows">
                         <div align="center" class="even">Row 2:</div><div align="center" class="even"> 60% | 50%</div>
                      </td>
-                     <td width="33%">
+                     <td width="33%" class="rows">
                         <div align="center" class="even">Row 3:</div><div align="center" class="even"> 60% | 50%</div>
                      </td>
-                  </tr>
-               </tbody>
-            </table>
-        </td>
-         </tr>
-         <tr>
-            <td align="center">
-            <table class="hotNumbers" bgcolor="red" width="100%">
-               <tbody>
-                  <tr>
-                     <td colspan="5">
-                        <h2 align="center">Hot Numbers</h2>
-                     </td>
-                  </tr>
-                  <tr>
-                     <td></td>
-                     <td></td>
-                     <td></td>
-                     <td></td>
-                     <td></td>
-                  </tr>
-               </tbody>
-            </table>
-        </td>
-         </tr>
-         <tr>
-            <td align="center">
-                
-            <table class="coldNumbers" bgcolor="skyblue" width="100%" style="border-color: rgb(78, 78, 78); border-width: 3px; border-style: solid;">
-               <tbody>
-                  <tr>
-                     <td colspan="5">
-                        <h2 align="center">Cold Numbers</h2>
-                     </td>
-                  </tr>
-                  <tr>
-                     <td  valign="middle" align="center" width="20%">5</td>
-                     <td  valign="middle" align="center" width="20%">5</td>
-                     <td  valign="middle" align="center" width="20%">5</td>
-                     <td  valign="middle" align="center" width="20%">5</td>
-                     <td  valign="middle" align="center" width="20%">5</td>
                   </tr>
                </tbody>
             </table>
@@ -899,7 +908,9 @@ body {
                      </table>
                      </td>
                   </tr>
+                  
                </tbody>
             </table>
+            
    </body>
 </html>
