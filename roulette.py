@@ -1,7 +1,27 @@
 from collections import OrderedDict
 from operator import getitem
+import numpy as np
+import math
 
-spins = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36,"0"]
+
+spins = [10, 1, 5, 35, 22, "0", "00", 10, 35, 22, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10,1, 2, 21, 22, 23, 24,  26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36,"0"]
+
+def sinceRolled(num):
+    i = 0
+    spinsSinceLastRolled = i
+    while i <= len(spins):
+        if spins[i] == num:
+            spinsSinceLastRolled = i + 1
+            break
+        elif spins[i] == str(num):
+            spinsSinceLastRolled = i + 1
+            break
+        elif num not in spins:
+            spinsSinceLastRolled = len(spins)
+            break
+        else: i += 1
+    return spinsSinceLastRolled
+
 
 numbers = {
   "1": {
@@ -10,7 +30,8 @@ numbers = {
       "twelve": 1,
       "row": 1,
       "align": "left",
-      "counter": spins.count(1)
+      "counter": spins.count(1),
+      "spinsSinceLastRolled": sinceRolled(1)
   },
   "2": {
       "color": "black",
@@ -18,7 +39,8 @@ numbers = {
       "twelve": 1,
       "row": 2,
       "align": "right",
-      "counter": spins.count(2)
+      "counter": spins.count(2),
+      "spinsSinceLastRolled": sinceRolled(2)
   },
   "3": {
       "color": "red",
@@ -26,7 +48,8 @@ numbers = {
       "twelve": 1,
       "row": 3,
       "align": "left",
-      "counter": spins.count(3)
+      "counter": spins.count(3),
+      "spinsSinceLastRolled": sinceRolled(3)
   }, 
   "4": {
       "color": "black",
@@ -34,7 +57,8 @@ numbers = {
       "twelve": 1,
       "row": 1,
       "align": "right",
-      "counter": spins.count(4)
+      "counter": spins.count(4),
+      "spinsSinceLastRolled": sinceRolled(4)
 
   },
   "5": {
@@ -43,7 +67,8 @@ numbers = {
       "twelve": 1,
       "row": 2,
       "align": "left",
-      "counter": spins.count(5)
+      "counter": spins.count(5),
+      "spinsSinceLastRolled": sinceRolled(5)
       },
   "6": {
       "color": "black",
@@ -51,7 +76,8 @@ numbers = {
       "twelve": 1,
       "row": 3,
       "align": "right",
-      "counter": spins.count(6)
+      "counter": spins.count(6),
+      "spinsSinceLastRolled": sinceRolled(6)
   },
   "7": {
       "color": "red",
@@ -59,7 +85,8 @@ numbers = {
       "twelve": 1,
       "row": 1,
       "align": "left",
-      "counter": spins.count(7)
+      "counter": spins.count(7),
+      "spinsSinceLastRolled": sinceRolled(7)
   },
   "8": {
       "color": "black",
@@ -67,7 +94,8 @@ numbers = {
       "twelve": 1,
       "row": 2,
       "align": "right",
-      "counter": spins.count(8)
+      "counter": spins.count(8),
+      "spinsSinceLastRolled": sinceRolled(8)
   },
   "9": {
       "color": "red",
@@ -75,7 +103,8 @@ numbers = {
       "twelve": 1,
       "row": 3,
       "align": "left",
-      "counter": spins.count(9)
+      "counter": spins.count(9),
+      "spinsSinceLastRolled": sinceRolled(9)
   }, 
   "10": {
       "color": "black",
@@ -83,7 +112,8 @@ numbers = {
       "twelve": 1,
       "row": 1,
       "align": "right",
-      "counter": spins.count(10)
+      "counter": spins.count(10),
+      "spinsSinceLastRolled": sinceRolled(10)
   },
   "11": {
       "color": "black",
@@ -91,7 +121,8 @@ numbers = {
       "twelve": 1,
       "row": 2,
       "align": "right",
-      "counter": spins.count(11)
+      "counter": spins.count(11),
+      "spinsSinceLastRolled": sinceRolled(11)
   },
   "12": {
       "color": "red",
@@ -99,7 +130,8 @@ numbers = {
       "twelve": 1,
       "row": 3,
       "align": "left",
-      "counter": spins.count(12)
+      "counter": spins.count(12),
+      "spinsSinceLastRolled": sinceRolled(12)
           },
   "13": {
       "color": "black",
@@ -107,7 +139,8 @@ numbers = {
       "twelve": 2,
       "row": 1,
       "align": "right",
-      "counter": spins.count(13)
+      "counter": spins.count(13),
+      "spinsSinceLastRolled": sinceRolled(13)
   },
   "14": {
       "color": "red",
@@ -115,7 +148,8 @@ numbers = {
       "twelve": 2,
       "row": 2,
       "align": "left",
-      "counter": spins.count(14)
+      "counter": spins.count(14),
+      "spinsSinceLastRolled": sinceRolled(14)
   }, 
   "15": {
       "color": "black",
@@ -123,7 +157,8 @@ numbers = {
       "twelve": 2,
       "row": 3,
       "align": "right",
-      "counter": spins.count(15)
+      "counter": spins.count(15),
+      "spinsSinceLastRolled": sinceRolled(15)
   },
   "16": {
       "color": "red",
@@ -131,7 +166,8 @@ numbers = {
       "twelve": 2,
       "row": 1,
       "align": "left",
-      "counter": spins.count(16)
+      "counter": spins.count(16),
+      "spinsSinceLastRolled": sinceRolled(16)
   },
   "17": {
       "color": "black",
@@ -139,7 +175,8 @@ numbers = {
       "twelve": 2,
       "row": 2,
       "align": "right",
-      "counter": spins.count(17)
+      "counter": spins.count(17),
+      "spinsSinceLastRolled": sinceRolled(17)
   },
   "18": {
       "color": "red",
@@ -147,7 +184,8 @@ numbers = {
       "twelve": 2,
       "row": 3,
       "align": "left",
-      "counter": spins.count(18)
+      "counter": spins.count(18),
+      "spinsSinceLastRolled": sinceRolled(18)
   }, 
   "19": {
       "color": "red",
@@ -155,7 +193,8 @@ numbers = {
       "twelve": 2,
       "row": 1,
       "align": "left",
-      "counter": spins.count(19)
+      "counter": spins.count(19),
+      "spinsSinceLastRolled": sinceRolled(19)
   },
   "20": {
       "color": "black",
@@ -163,7 +202,8 @@ numbers = {
       "twelve": 2,
       "row": 2,
       "align": "right",
-      "counter": spins.count(20)
+      "counter": spins.count(20),
+      "spinsSinceLastRolled": sinceRolled(20)
   },
   "21": {
       "color": "red",
@@ -171,7 +211,8 @@ numbers = {
       "twelve": 2,
       "row": 3,
       "align": "left",
-      "counter": spins.count(21)
+      "counter": spins.count(21),
+      "spinsSinceLastRolled": sinceRolled(21)
   }, 
   "22": {
       "color": "black",
@@ -179,7 +220,8 @@ numbers = {
       "twelve": 2,
       "row": 1,
       "align": "left",
-      "counter": spins.count(22)
+      "counter": spins.count(22),
+      "spinsSinceLastRolled": sinceRolled(22)
   }, 
   "23": {
       "color": "red",
@@ -187,7 +229,8 @@ numbers = {
       "twelve": 2,
       "row": 2,
       "align": "left",
-      "counter": spins.count(23)
+      "counter": spins.count(23),
+      "spinsSinceLastRolled": sinceRolled(23)
   },
   "24": {
       "color": "black",
@@ -195,7 +238,8 @@ numbers = {
       "twelve": 2,
       "row": 3,
       "align": "right",
-      "counter": spins.count(24)
+      "counter": spins.count(24),
+      "spinsSinceLastRolled": sinceRolled(24)
   },
   "25": {
       "color": "red",
@@ -203,7 +247,8 @@ numbers = {
       "twelve": 3,
       "row": 1,
       "align": "left",
-      "counter": spins.count(25)
+      "counter": spins.count(25),
+      "spinsSinceLastRolled": sinceRolled(25)
   }, 
   "26": {
       "color": "black",
@@ -211,7 +256,8 @@ numbers = {
       "twelve": 3,
       "row": 2,
       "align": "left",
-      "counter": spins.count(26)
+      "counter": spins.count(26),
+      "spinsSinceLastRolled": sinceRolled(26)
   }, 
   "27": {
       "color": "red",
@@ -219,7 +265,8 @@ numbers = {
       "twelve": 3,
       "row": 3,
       "align": "left",
-      "counter": spins.count(27)
+      "counter": spins.count(27),
+      "spinsSinceLastRolled": sinceRolled(27)
   },
   "28": {
       "color": "black",
@@ -227,7 +274,8 @@ numbers = {
       "twelve": 3,
       "row": 1,
       "align": "right",
-      "counter": spins.count(28)
+      "counter": spins.count(28),
+      "spinsSinceLastRolled": sinceRolled(28)
   },
   "29": {
       "color": "black",
@@ -235,7 +283,8 @@ numbers = {
       "twelve": 3,
       "row": 2,
       "align": "right",
-      "counter": spins.count(29)
+      "counter": spins.count(29),
+      "spinsSinceLastRolled": sinceRolled(29)
   },
   "30": {
       "color": "red",
@@ -243,7 +292,8 @@ numbers = {
       "twelve": 3,
       "row": 3,
       "align": "left",
-      "counter": spins.count(30)
+      "counter": spins.count(30),
+      "spinsSinceLastRolled": sinceRolled(30)
 
   },
   "31": {
@@ -252,7 +302,8 @@ numbers = {
       "twelve": 2,
       "row": 1,
       "align": "left",
-      "counter": spins.count(31)
+      "counter": spins.count(31),
+      "spinsSinceLastRolled": sinceRolled(31)
 
   },
   "32": {
@@ -261,7 +312,8 @@ numbers = {
       "twelve": 2,
       "row": 2,
       "align": "right",
-      "counter": spins.count(32)
+      "counter": spins.count(32),
+      "spinsSinceLastRolled": sinceRolled(32)
 
   },
   "33": {
@@ -270,7 +322,8 @@ numbers = {
       "twelve": 3,
       "row": 3,
       "align": "left",
-      "counter": spins.count(33)
+      "counter": spins.count(33),
+      "spinsSinceLastRolled": sinceRolled(33)
 
   }, 
   "34": {
@@ -279,7 +332,8 @@ numbers = {
       "twelve": 3,
       "row": 1,
       "align": "left",
-      "counter": spins.count(34)
+      "counter": spins.count(34),
+      "spinsSinceLastRolled": sinceRolled(34)
 
   }, 
   "35": {
@@ -288,7 +342,8 @@ numbers = {
       "twelve": 3,
       "row": 2,
       "align": "left",
-      "counter": spins.count(35)
+      "counter": spins.count(35),
+      "spinsSinceLastRolled": sinceRolled(35)
 
   },
   "36": {
@@ -297,7 +352,8 @@ numbers = {
       "twelve": 3,
       "row": 3,
       "align": "right",
-      "counter": spins.count(36)
+      "counter": spins.count(36),
+      "spinsSinceLastRolled": sinceRolled(36)
 
       },
 
@@ -308,7 +364,8 @@ numbers = {
       "row": 0,
       "align": "center",
       
-"counter": spins.count("0")
+"counter": spins.count("0"),
+      "spinsSinceLastRolled": sinceRolled("0")
       },
   "00": {
       "color": "green",
@@ -316,7 +373,8 @@ numbers = {
       "twelve": 0,
       "row": 0,
       "align": "center",
-      "counter": spins.count("00")
+      "counter": spins.count("00"),
+      "spinsSinceLastRolled": sinceRolled("00")
 
   }
 
@@ -545,15 +603,31 @@ def thirdRow():
   print(thirdRowPercent) 
   return thirdRowPercent
 
+   
 
 def hotCold():
-   sum = 0
-   for key, value in numbers.items():
-      if value and 'counter' in value.keys():
-         sum+= value['counter']
-   print(sum)
-   
-   average = sum/len(spins)
+    uniqueSpins = []
+    for num in spins:
+      if num not in uniqueSpins:
+         uniqueSpins.append(num)
+
+    print(uniqueSpins)
+    
+
+    average = len(spins)/len(uniqueSpins)
+    print("average: " + str(average))
+    print("math floor: "+ str(math.floor(average)))
+    print("math ceiling: "+ str(math.ceil(average)))
+    hotNumbers = []
+       
+    for k,v in numbers.items():
+        numStg = str(k)
+        if numbers[numStg]["counter"] >= math.ceil(average):
+            hotNumbers.append(k)
+        else: pass
+        
+    
+    print("Hot Numbers: " +str(hotNumbers))
 
 
    
@@ -561,22 +635,25 @@ def hotCold():
 #spins = [10, 1, 5, 35, 22, 0, 00, 10, 35, 22, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
 
 
-redAverage()
-blackAverage()
-greenAverage()
-evenAverages()
-oddAverages()
-zeroAverages()
-firstTwelve()
-secondTwelve()
-thirdTwelve()
-firstRow()
-secondRow()
-thirdRow()
+#redAverage()
+#blackAverage()
+#greenAverage()
+#evenAverages()
+#oddAverages()
+#zeroAverages()
+#firstTwelve()
+#secondTwelve()
+#thirdTwelve()
+#firstRow()
+#secondRow()
+#thirdRow()
 
-print(numbers["00"]["counter"])
-print(totalCount)
-hotCold()
+#print(numbers["00"]["counter"])
+#print(totalCount)
+#hotCold()
+x = sinceRolled(15)
+print(x)
+
 
 
 
