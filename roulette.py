@@ -651,7 +651,7 @@ def hotCold():
 #print(numbers["00"]["counter"])
 #print(totalCount)
 #hotCold()
-x = sinceRolled(15)
+x = sinceRolled("00")
 print(x)
 
 
