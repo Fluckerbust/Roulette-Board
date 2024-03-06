@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+   <head>
+    <link rel="stylesheet" href="./style.scss">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        
+        
+      
+      .container {
+         border-radius: 0px;
+         background: linear-gradient(90deg, rgba(0, 0, 0, 0.795) 0%, rgba(0, 0, 0, 0.795) 2%,rgba(255, 255, 255, 0.274) 5%, rgba(255, 255, 255, 0.253) 95%, rgba(0, 0, 0, 0.795) 98%,rgba(0, 0, 0, 0.795) 100%);
+         width: 675px;
+         height: 950px;
+         max-height: 1000px;
+         margin: 0 auto;
+         padding: 15px;
+         backdrop-filter: blur(20px);
+      }
+      .ballBlack {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border-radius: 50%;
+  position: relative;
+  background: radial-gradient(circle at 50% 120%,  #323232, #0a0a0a 80%, #000000 100%);
+  
+}
+.ballRed {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border-radius: 50%;
+  position: relative;
+  background: radial-gradient(circle at 50% 120%,  #323232, #741717 80%, #741717 100%);
+}
+.ballGreen {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border-radius: 50%;
+  position: relative;
+  background: radial-gradient(circle at 50% 120%,  #323232, #1b790f 80%, #1b790f 100%);
+}
+.ball:before {
+  content: "";
+  position: absolute;
+  background: radial-gradient(circle at 50% 120%,  rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+  bottom: 2.5%;
+  left: 5%;
+  opacity: 0.6;
+  height: 100%;
+  width: 90%;
+  -webkit-filter: blur(5px);
+  z-index: 2;
+}
+.ball:after {
+  width: 100%;
+  height: 100%;
+  content: "";
+  position: absolute;
+  top: 5%;
+  left: 10%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 50%,  rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 14%, rgba(255, 255, 255, 0) 24%);
+  -webkit-transform: translateX(-80px) translateY(-90px) skewX(-20deg);
+  -moz-transform: translateX(-80px) translateY(-90px) skewX(-20deg);
+  -ms-transform: translateX(-80px) translateY(-90px) skewX(-20deg);
+  -o-transform: translateX(-80px) translateY(-90px) skewX(-20deg);
+  transform: translateX(-80px) translateY(-90px) skewX(-20deg);
+  -webkit-filter: blur(10px);
+}
+
+.ball .shadow {
+position: absolute;
+width: 100%;
+height: 100%;
+background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
+
+z-index: 3;
+}
+.stage {
+  width: 65px;
+  height: 65px;
+  display: inline-block;
+  margin: 20px;
+ 
+}
+body {
+  width: 1000px;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.795);
+  background-repeat: no-repeat;
+  display: flex;
+  background-image: url(./chips.gif);
+  color: white;
+  background-size: cover;
+  vertical-align: middle;
+   
+}
+.ballText {
+   color: white;
+   font-size: xx-large;
+   padding: 10px 10px 0 10px;
+}
+.blurred-box{
+   border-radius: 10px;
+   width: 90%;
+   height: 950px;
+   background: blur(10px);
+   background-color: rgba(24, 26, 33, .85);
+   display: flex;
+   flex-direction: column;
+   margin-left: 25px;
+  padding: 0 10px;
+  box-shadow: rgb(0, 0, 0) 3px 3px 6px 0px inset, rgba(0, 0, 0, 0.75) -3px -3px 6px 1px inset;
+   align-items: center;
+   
+}
+.lastRolledSection {
+   display: flexbox;
+  
+   width:25%;
+   align-self: center;
+   margin: 0 auto;
+  
+}
+.statSection {
+   
+   
+   width: 75%;
+   margin: 0 auto;
+
+}
+
+.boxContainerRed {
+   border-radius: 15px;
+   box-shadow:  rgba(0, 0, 0, 0.61) 0px -23px 25px 0px inset, rgba(255, 255, 255, 0.226) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.37) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.473) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.041) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+   border: .5px solid rgba(0, 0, 0, 1);
+padding: 5px;
+
+}
+
+.boxContainerBlack {
+   border-radius: 15px;
+   box-shadow:  rgba(0, 0, 0, 0.61) 0px -23px 25px 0px inset, rgba(255, 255, 255, 0.233) 0px -36px 30px 0px inset, rgba(255, 255, 255, 0.041) 0px -79px 40px 0px inset, rgba(20, 20, 20, 0.856) 0px 2px 1px, rgba(0, 0, 0, 0.692) 0px 4px 2px, rgba(0, 0, 0, 0.041) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+   border: .5px solid rgba(255, 255, 255, .6);
+   padding: 5px;
+
+   
+}
+
+.banner {
+   border-radius: 0px ;
+         background: linear-gradient(0deg, rgba(0,0,0) 0%, rgb(0, 0, 0) 2%,rgba(177, 167, 167,.6) 5%, rgba(67, 67, 67,.4) 95%, rgb(0, 0, 0) 98%,rgba(0,0,0) 100%);
+         width: 600px;
+         max-height: 400px;
+         margin: 0 auto;
+         padding: 15px;
+         backdrop-filter: blur(20px);
+}
+.twelves {
+   border-radius: 15px;
+   box-shadow: rgba(51, 92, 162, 0.397) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.85) 0px -36px 30px 0px inset, rgba(51, 92, 162, 0.9) 0px -79px 40px 0px inset, rgba(255, 255, 255, 0.06) 0px 2px 1px, rgba(41, 121, 169, 0.09) 0px 4px 2px, rgba(41, 121, 169, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(255, 255, 255, 0.09) 0px 32px 16px;
+   padding: 5px;
+}
+.rows {
+   border-radius: 15px;
+   
+   box-shadow: rgba(51, 92, 162, 0.397) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.85) 0px -36px 30px 0px inset, rgba(51, 92, 162, 0.9) 0px -79px 40px 0px inset, rgba(255, 255, 255, 0.06) 0px 2px 1px, rgba(41, 121, 169, 0.09) 0px 4px 2px, rgba(41, 121, 169, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(255, 255, 255, 0.09) 0px 32px 16px;
+   padding: 5px;
+}
+.evenOdd {
+   border-radius: 15px;
+   box-shadow: rgba(51, 92, 162, 0.397) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.85) 0px -36px 30px 0px inset, rgba(51, 92, 162, 0.9) 0px -79px 40px 0px inset, rgba(255, 255, 255, 0.06) 0px 2px 1px, rgba(41, 121, 169, 0.09) 0px 4px 2px, rgba(41, 121, 169, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(255, 255, 255, 0.09) 0px 32px 16px;
+   padding: 5px;
+}
+
+.redGrid {
+   box-shadow:  rgba(0, 0, 0, 0.61) 0px -23px 25px 0px inset, rgba(255, 255, 255, 0.226) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.37) 0px -79px 40px 0px inset, rgba(0, 0, 0, ) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.041) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;   
+   background-color: #741717;
+   border-radius: 10px;
+   padding: 1px 3px;
+}
+
+.blackGrid {
+   
+   box-shadow: rgba(255, 255, 255, 0.15) 0px 0px 3px, rgba(255, 255, 255, 0.12) 0px 5px 10px;
+   background-color: #000000;
+   border-radius: 10px;
+   padding: 1px 5px;
+}
+.greenkGrid {
+   background: radial-gradient(circle at 50% 120%,  #323232, #1b790f 80%, #1b790f 100%);   
+   border-radius: 10px;
+   padding: 1px 20px;
+}
+
+.gridBG {
+   background:
+linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+background-color: #131313;
+background-size: 20px 20px;
+}
+
+
+        </style>
+      
+   </head>
+   <body bgcolor="black" style="font-family:Georgia, 'Times New Roman', Times, serif" >
+      
+    <title>Roulette Statistics</title>
+    
+      <table  align="center" >
+      <thead>
+         <tr>
+            <td class="banner" >
+               <div align="center" >
+                  <img src="https://coloradocasinonight.com/files/resized/240790/580;365;957e2b501fbc29d80cdf7c60b5c7edc027eb9fa2.jpg" height="300px" />
+               </div>
+               
+            </td>
+         </tr>
+      </thead>
+      <tbody>
+         <tr>
+            <td align="center">
+               
+               <table class="container">
+      <tbody>
+         <tr>
+            <td class="lastRolledSection" valign="top">
+                <table width="100%" align="center" class="blurred-box "  >
+                    <thead >
+                        <tr>
+                            <td align="center"><h1>Last</h1></td>
+                        </tr>
+                    </thead>
+                    <tbody >
+                        <tr>
+                            <td  align="center" class="lastRollContainer " >
+                              <section class="stage">
+                                 <figure class="ballBlack"><span class="shadow"><div class="ballText">10</div></span></figure>
+                               </section>
+                               <section class="stage">
+                                 <figure class="ballRed"><span class="shadow"><div class="ballText">36</div></span></figure>
+                               </section>
+                               <section class="stage">
+                                 <figure class="ballGreen"><span class="shadow"><div class="ballText">00</div></span></figure>
+                               </section>
+                              </td>
+                        </tr>
+                    </tbody>
+                </table>
+               
+            </td>
+            
+            <td class="statSection"  valign="top">
+               <table class="blurred-box gridBG "  >
+                <tbody>
+         
+                    <td align="center" >
+                <table  width="96%" align="center" >
+                    <tbody>
+                        <tr>
+                            
+                                          <td align="center">
+                                             <h2 class="even">Total Rolls: 100</h2>
+                                          </td>
+                                          <td align="center">
+                                             <h3 class="odd">Overall&nbsp;|&nbsp;Last&nbsp;20</h3>
+                                          
+            
+ </td>
+ 
+         </tr>
+         
+         <tr >
+            <td align="center" bgcolor="red" class="boxContainerRed" width="50%" >
+                
+                             <div  align="center">Red:</div><div  class="red" align="center"> 60% | 50%</div>
+                          </td>
+                          <td class="boxContainerBlack" align="center" bgcolor="black" style="color: white; margin-left: 1em;"id="black" width="50%">
+                            <div  align="center" >Black:</div><div class="black" align="center"> 60% | 50%</div>
+                          </td>
+                    
+            </tr>
+        </tbody>
+    </table>
+            </td>
+         </tr>
+         <tr>
+            <td align="center" > 
+            <table width="100%" align="center" style="margin: 10px 0px; " class="evenOdd">
+               <tbody>
+                  <tr>
+                     <td width="33%" >
+                        <div class="even" align="center">Even:</div>
+                        <div class="even" align="center"> 60% | 50%</div>
+                     </td>
+                     <td width="33%" >
+                        <div align="center" class="odd">Odd:</div> 
+                        <div class="odd" align="center">60% | 50%</div>
+                     </td>
+                     <td width="33%" >
+                        <div class="zeroes" align="center">Zeroes:</div>
+                        <div class="zeroes" align="center">60% | 50%</div>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+        </td>
+         </tr>
+         <tr>
+            <td align="center">
+            <table width="100%" align="center" style="margin: 10px 0px;"class="twelves"> 
+               <tbody>
+                  <tr>
+                     <td width="33%" >
+                        <div align="center" >1st 12:</div><div align="center" class="even"> 60% | 50%</div>
+                     </td>
+                     <td width="33%" >
+                        <div align="center" >2nd 12:</div><div align="center" class="even"> 60% | 50%</div>
+                     </td>
+                     <td width="33%" >
+                        <div align="center" >3rd 12:</div><div align="center" class="even"> 60% | 50%</div>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+        </td>
+         </tr>
+         <tr>
+            <td align="center"> 
+            <table width="100%" align="center" style="margin: 10px 0px;" class="rows">
+               <tbody>
+                  <tr>
+                    <td width="33%" >
+                        <div align="center" class="even">Row 1:</div><div align="center" class="even"> 60% | 50%</div>
+                     </td>
+                     <td width="33%" >
+                        <div align="center" class="even">Row 2:</div><div align="center" class="even"> 60% | 50%</div>
+                     </td>
+                     <td width="33%" >
+                        <div align="center" class="even">Row 3:</div><div align="center" class="even"> 60% | 50%</div>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+        </td>
+         </tr>
+         <tr>
+            <td align="center" class="boxContainerBlack">
+            <table cellpadding="5px" >
+      <tbody>
+         <tr>
+            
+            <td colspan="6" align="center">
+               <table>
+               <tbody>
+                  <tr>
+                     <td colspan="2" style="text-align: center;">Number</td>
+                  </tr>
+                  <tr>
+                     <td align="center">Times Rolled |</td>
+                     <td align="center">Spins since last hit</td>
+                  </tr>
+               </tbody>
+            </table></td>
+         </tr>
+         <tr>
+            <td >
+               <table  class="redGrid" >
+                  <tbody>
+                     <tr>
+                        <td colspan="2" style="text-align: center;">1</td>
+                     </tr>
+                     <tr>
+                        <td>1</td>
+                        <td>20</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td>
+               <table class="blackGrid">
+                  <tbody>
+                     <tr>
+                        <td colspan="2" style="text-align: center;">2</td>
+                     </tr>
+                     <tr>
+                        <td>1</td>
+                        <td>20</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td>
+               <table class="redGrid" >
+                  <tbody>
+                     <tr>
+                        <td colspan="2" style="text-align: center;">3</td>
+                     </tr>
+                     <tr>
+                        <td>1</td>
+                        <td>20</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td>
+               <table class="blackGrid">
+                  <tbody>
+                     <tr>
+                        <td colspan="2" style="text-align: center;">4</td>
+                     </tr>
+                     <tr>
+                        <td>4</td>
+                        <td>20</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td>
+               <table class="redGrid" >
+                  <tbody>
+                     <tr>
+                        <td colspan="2" style="text-align: center;">5</td>
+                     </tr>
+                     <tr>
+                        <td>5</td>
+                        <td>20</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td>
+               <table class="blackGrid">
+                  <tbody>
+                     <tr>
+                        <td colspan="2" style="text-align: center;">6</td>
+                     </tr>
+                     <tr>
+                        <td>2</td>
+                        <td>20</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+         </tr>
+         <tr>
+            <table cellpadding="5px">
+      <tbody>
+         <tr>
+            <td>
+               <table class="redGrid" >
+                  <tbody>
+                     <tr>
+                        <td colspan="2" style="text-align: center;">7</td>
+                     </tr>
+                     <tr>
+                        <td>1</td>
+                        <td>20</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td>
+               <table class="blackGrid">
+                  <tbody>
+                     <tr>
+                        <td colspan="2" style="text-align: center;">8</td>
+                     </tr>
+                     <tr>
+                        <td>1</td>
+                        <td>20</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td>
+               <table class="redGrid" >
+                  <tbody>
+                     <tr>
+                        <td colspan="2" style="text-align: center;">9</td>
+                     </tr>
+                     <tr>
+                        <td>1</td>
+                        <td>20</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td>
+               <table class="blackGrid">
+                  <tbody>
+                     <tr>
+                        <td colspan="2" style="text-align: center;">10</td>
+                     </tr>
+                     <tr>
+                        <td>4</td>
+                        <td>20</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td>
+               <table class="blackGrid">
+                  <tbody>
+                     <tr>
+                        <td colspan="2" style="text-align: center;">11</td>
+                     </tr>
+                     <tr>
+                        <td>5</td>
+                        <td>20</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td>
+               <table class="redGrid" >
+                  <tbody>
+                     <tr>
+                        <td colspan="2" style="text-align: center;">12</td>
+                     </tr>
+                     <tr>
+                        <td>1</td>
+                        <td>20</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+         </tr>
+         <tr>
+            <table cellpadding="5px">
+      <tbody>
+         <tr>
+            <td>
+               <table class="blackGrid">
+                  <tbody>
+                     <tr>
+                        <td colspan="2" style="text-align: center;">13</td>
+                     </tr>
+                     <tr>
+                        <td>1</td>
+                        <td>20</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td>
+               <table class="redGrid" >
+                  <tbody>
+                     <tr>
+                        <td colspan="2" style="text-align: center;">14</td>
+                     </tr>
+                     <tr>
+                        <td>1</td>
+                        <td>20</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td>
+               <table class="blackGrid">
+                  <tbody>
+                     <tr>
+                        <td colspan="2" style="text-align: center;">15</td>
+                     </tr>
+                     <tr>
+                        <td>1</td>
+                        <td>20</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td>
+               <table class="redGrid" >
+                  <tbody>
+                     <tr>
+                        <td colspan="2" style="text-align: center;">16</td>
+                     </tr>
+                     <tr>
+                        <td>4</td>
+                        <td>20</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td>
+               <table class="blackGrid">
+                  <tbody>
+                     <tr>
+                        <td colspan="2" style="text-align: center;">17</td>
+                     </tr>
+                     <tr>
+                        <td>5</td>
+                        <td>20</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td>
+               <table class="redGrid" >
+                  <tbody>
+                     <tr>
+                        <td colspan="2" style="text-align: center;">18</td>
+                     </tr>
+                     <tr>
+                        <td>1</td>
+                        <td>20</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+         </tr>
+         <tr>
+            <table cellpadding="5px">
+               <tbody>
+                  <tr>
+                     <td>
+                        <table class="redGrid" >
+                           <tbody>
+                              <tr>
+                                 <td colspan="2" style="text-align: center;">19</td>
+                              </tr>
+                              <tr>
+                                 <td>1</td>
+                                 <td>20</td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </td>
+                     <td>
+                        <table class="blackGrid">
+                           <tbody>
+                              <tr>
+                                 <td colspan="2" style="text-align: center;">20</td>
+                              </tr>
+                              <tr>
+                                 <td>1</td>
+                                 <td>20</td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </td>
+                     <td>
+                        <table class="redGrid" >
+                           <tbody>
+                              <tr>
+                                 <td colspan="2" style="text-align: center;">21</td>
+                              </tr>
+                              <tr>
+                                 <td>1</td>
+                                 <td>20</td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </td>
+                     <td>
+                        <table class="blackGrid">
+                           <tbody>
+                              <tr>
+                                 <td colspan="2" style="text-align: center;">22</td>
+                              </tr>
+                              <tr>
+                                 <td>4</td>
+                                 <td>20</td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </td>
+                     <td>
+                        <table class="redGrid" > 
+                           <tbody>
+                              <tr>
+                                 <td colspan="2" style="text-align: center;">23</td>
+                              </tr>
+                              <tr>
+                                 <td>5</td>
+                                 <td>20</td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </td>
+                     <td>
+                        <table class="blackGrid">
+                           <tbody>
+                              <tr>
+                                 <td colspan="2" style="text-align: center;">24</td>
+                              </tr>
+                              <tr>
+                                 <td>10</td>
+                                 <td>20</td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <table cellpadding="5px">
+                        <tbody>
+                           <tr>
+                              <td>
+                                 <table class="redGrid" >
+                                    <tbody>
+                                       <tr>
+                                          <td colspan="2" style="text-align: center;">25</td>
+                                       </tr>
+                                       <tr>
+                                          <td>1</td>
+                                          <td>20</td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                              </td>
+                              <td>
+                                 <table class="blackGrid">
+                                    <tbody>
+                                       <tr>
+                                          <td colspan="2" style="text-align: center;">26</td>
+                                       </tr>
+                                       <tr>
+                                          <td>1</td>
+                                          <td>20</td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                              </td>
+                              <td>
+                                 <table class="redGrid" > 
+                                    <tbody>
+                                       <tr>
+                                          <td colspan="2" style="text-align: center;">27</td>
+                                       </tr>
+                                       <tr>
+                                          <td>1</td>
+                                          <td>20</td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                              </td>
+                              <td>
+                                 <table class="blackGrid"> 
+                                    <tbody>
+                                       <tr>
+                                          <td colspan="2" style="text-align: center;">28</td>
+                                       </tr>
+                                       <tr>
+                                          <td>4</td>
+                                          <td>20</td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                              </td>
+                              <td>
+                                 <table class="blackGrid">
+                                    <tbody>
+                                       <tr>
+                                          <td colspan="2" style="text-align: center;">29</td>
+                                       </tr>
+                                       <tr>
+                                          <td>5</td>
+                                          <td>20</td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                              </td>
+                              <td>
+                                 <table class="redGrid" >
+                                    <tbody>
+                                       <tr>
+                                          <td colspan="2" style="text-align: center;">30</td>
+                                       </tr>
+                                       <tr>
+                                          <td>10</td>
+                                          <td>20</td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                              </td>
+                           </tr>
+                           <tr>
+                              <table cellpadding="5px">
+                                 <tbody>
+                                    <tr>
+                                       <td>
+                                          <table class="blackGrid">
+                                             <tbody>
+                                                <tr>
+                                                   <td colspan="2" style="text-align: center;">31</td>
+                                                </tr>
+                                                <tr>
+                                                   <td>1</td>
+                                                   <td>20</td>
+                                                </tr>
+                                             </tbody>
+                                          </table >
+                                       </td>
+                                       <td>
+                                          <table class="redGrid" >
+                                             <tbody>
+                                                <tr>
+                                                   <td colspan="2" style="text-align: center;">32</td>
+                                                </tr>
+                                                <tr>
+                                                   <td>1</td>
+                                                   <td>20</td>
+                                                </tr>
+                                             </tbody>
+                                          </table>
+                                       </td>
+                                       <td>
+                                          <table class="blackGrid">
+                                             <tbody>
+                                                <tr>
+                                                   <td colspan="2" style="text-align: center;">33</td>
+                                                </tr>
+                                                <tr>
+                                                   <td>1</td>
+                                                   <td>20</td>
+                                                </tr>
+                                             </tbody>
+                                          </table>
+                                       </td>
+                                       <td>
+                                          <table class="redGrid" >
+                                             <tbody>
+                                                <tr>
+                                                   <td colspan="2" style="text-align: center;">34</td>
+                                                </tr>
+                                                <tr>
+                                                   <td>4</td>
+                                                   <td>20</td>
+                                                </tr>
+                                             </tbody>
+                                          </table>
+                                       </td>
+                                       <td>
+                                          <table class="blackGrid">
+                                             <tbody>
+                                                <tr>
+                                                   <td colspan="2" style="text-align: center;">35</td>
+                                                </tr>
+                                                <tr>
+                                                   <td>5</td>
+                                                   <td>20</td>
+                                                </tr>
+                                             </tbody>
+                                          </table>
+                                       </td>
+                                       <td>
+                                          <table class="redGrid" >
+                                             <tbody>
+                                                <tr>
+                                                   <td colspan="2" style="text-align: center;">36</td>
+                                                </tr>
+                                                <tr>
+                                                   <td></td>
+                                                   <td>20</td>
+                                                </tr>
+                                             </tbody>
+                                          </table>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <table cellpadding="5px">
+                                          <tbody>
+                                             <tr>
+                                                <td>
+                                                   <table>
+                                                      <tbody>
+                                                         <tr>
+                                                            <td ></td>
+                                                         </tr>
+                                                        
+                                                      </tbody>
+                                                   </table>
+                                                </td>
+                                                <td>
+                                                   <table>
+                                                      <tbody>
+                                                         <tr>
+                                                            <td ></td>
+                                                         </tr>
+                                                        
+                                                      </tbody>
+                                                   </table>
+                                                </td>
+                                                <td>
+                                                   <table class="greenkGrid">
+                                                      <tbody>
+                                                         <tr>
+                                                            <td colspan="2" style="text-align: center;">0</td>
+                                                         </tr>
+                                                         <tr>
+                                                            <td>1</td>
+                                                            <td>20</td>
+                                                         </tr>
+                                                      </tbody>
+                                                   </table>
+                                                </td>
+                                                <td>
+                                                   <table class="greenkGrid">
+                                                      <tbody>
+                                                         <tr>
+                                                            <td colspan="2" style="text-align: center;">00</td>
+                                                         </tr>
+                                                         <tr>
+                                                            <td>4</td>
+                                                            <td>20</td>
+                                                         </tr>
+                                                      </tbody>
+                                                   </table>
+                                                </td>
+                                                <td>
+                                                   <table>
+                                                      <tbody>
+                                                         <tr>
+                                                            <td ></td>
+                                                         </tr>
+                                                        
+                                                      </tbody>
+                                                   </table>
+                                                </td>
+                                                <td>
+                                                   <table>
+                                                      <tbody>
+                                                         <tr>
+                                                            <td ></td>
+                                                         </tr>
+                                                         
+                                                      </tbody>
+                                                   </table>
+                                                </td>
+                                             </tr>
+                                          </tbody>
+                                       </table>
+                                    </td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                     </td>
+                  </tr>
+                  
+               </tbody>
+            </table>
+            
+   </body>
+</html>
