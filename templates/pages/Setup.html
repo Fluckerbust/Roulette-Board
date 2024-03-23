@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+   <head>
+    <link rel="stylesheet" href="./style.scss">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        
+        
+      
+    .container {
+        border-radius: 0px;
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0.795) 0%, rgba(0, 0, 0, 0.795) 2%,rgba(255, 255, 255, 0.274) 5%, rgba(255, 255, 255, 0.253) 95%, rgba(0, 0, 0, 0.795) 98%,rgba(0, 0, 0, 0.795) 100%);
+        width: 675px;
+        height: 950px;
+        max-height: 1000px;
+        margin: 0 auto;
+        padding: 15px;
+        backdrop-filter: blur(20px);
+    }
+
+    body {
+    width: 1000px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.795);
+    background-repeat: no-repeat;
+    display: flex;
+    background-image: url(./chips.gif);
+    color: white;
+    background-size: cover;
+    vertical-align: middle;
+    
+    }
+
+    .blurred-box{
+    border-radius: 10px;
+    width: 90%;
+    height: 950px;
+    background: blur(10px);
+    background-color: rgba(24, 26, 33, .85);
+    display: flex;
+    flex-direction: column;
+    margin-left: 25px;
+    padding: 0 10px;
+    box-shadow: rgb(0, 0, 0) 3px 3px 6px 0px inset, rgba(0, 0, 0, 0.75) -3px -3px 6px 1px inset;
+    align-items: center;
+    
+    }
+    .lastRolledSection {
+    display: flexbox;
+    
+    width:25%;
+    align-self: center;
+    margin: 0 auto;
+    
+    }
+
+
+    .banner {
+    border-radius: 0px ;
+            background: linear-gradient(0deg, rgba(0,0,0) 0%, rgb(0, 0, 0) 2%,rgba(177, 167, 167,.6) 5%, rgba(67, 67, 67,.4) 95%, rgb(0, 0, 0) 98%,rgba(0,0,0) 100%);
+            width: 600px;
+            max-height: 400px;
+            margin: 0 auto;
+            padding: 15px;
+            backdrop-filter: blur(20px);
+}
+
+    .setupTable {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        border: 5px solid black;
+        border-radius: 15px;
+    }
+
+    .setupTable thead {
+        background-color: black;
+    }
+    .setupTable th {
+        
+        width: 100%;
+        text-align: left;
+        margin: 0 auto;
+        padding: 10px 15px;
+    }
+    .setupTable td {
+        width: 25%;
+        text-align: left;
+        margin: 0 auto;
+        padding: 10px 
+    }
+    .setupTable td:nth-child(1){
+        width: 800px;
+    }
+    .setupTable td:nth-child(2){
+        border-right: 5px solid black;
+        border-left: 5px solid black;
+        width: 20px;
+    }
+    .setupTable td:nth-child(3) {
+        
+        
+        
+
+        
+        
+        width: 125px;
+        
+    }
+    
+    .setupTable th:nth-child(1){
+        width: 20px;
+    }
+    .setupTable th:nth-child(2){
+        border-right: 5px solid black;
+        border-left: 5px solid black;
+    }
+    .setupTable th:nth-child(3) {
+        
+        
+        margin: 0 auto;
+        
+    }
+    
+
+    .boardButton {
+        width: 10%;
+        display: flex;
+        position: relative;
+
+        margin: 0 auto;
+
+    }
+
+    div button {
+        height: 35px;
+        margin: 15px 0;
+        font-size: larger;
+    }
+
+
+
+
+        </style>
+      
+   </head>
+   <body bgcolor="black" style="font-family:Georgia, 'Times New Roman', Times, serif" >
+      
+    <title>Roulette Statistics</title>
+    
+      <table  align="center" >
+      <thead>
+         <tr>
+            <td class="banner" >
+               <div align="center" >
+                  <img src="https://coloradocasinonight.com/files/resized/240790/580;365;957e2b501fbc29d80cdf7c60b5c7edc027eb9fa2.jpg" height="300px" />
+               </div>
+               
+            </td>
+         </tr>
+      </thead>
+      <tbody>
+         <tr>
+            <td align="center">
+               
+               <table class="container">
+      <tbody>
+         <tr>
+            <td class="lastRolledSection" valign="top">
+                <div class="boardButton"><a href="./" ><button>Board</button></a></div>
+                <table class="setupTable">
+                    <thead>
+                        <tr>
+                            
+                            <th>Name</th>
+                            <th>Active</th>
+                            <th>Delete</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            
+                            <td>CCN</td>
+                            <td>
+                                <input type="checkbox"></input>
+                            </td>
+                            <td>
+                                <button>X</button>
+                            </td>
+                        
+                        </tr>
+                        <tr>
+                            <td><a href="./setupform" ><button>+ Add New</button></a></td>
+                        </tr>
+                        
+                        
+                    </tbody>
+                </table>
+            
+            </td>
+                  </tr>
+                  
+               </tbody>
+            </table>
+            
+   </body>
+</html>

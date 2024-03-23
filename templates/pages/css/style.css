@@ -1,0 +1,2096 @@
+.bubbles {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+@keyframes float-up {
+  0% {
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+  25% {
+    transform: rotate3d(0, 0, 1, 90deg);
+  }
+  50% {
+    transform: rotate3d(0, 0, 1, 180deg);
+  }
+  75% {
+    transform: rotate3d(0, 0, 1, 270deg);
+  }
+  100% {
+    transform: rotate3d(0, 0, 1, 360deg);
+    transform: translateY(175vh);
+  }
+}
+@keyframes sway-left-to-right {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+@keyframes sway-right-to-left {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+.dashed-circle {
+  background: #991717;
+  border: 13px dashed white;
+  border-radius: 50%;
+  line-height: 100px;
+  text-align: center;
+  font-family: Georgia;
+  font-size: 1.5em;
+  color: white;
+  position: absolute;
+  left: var(--bubble-left-offset);
+  top: -75%;
+  display: block;
+  width: var(--bubble-radius);
+  height: var(--bubble-radius);
+  animation: float-up var(--bubble-float-duration) var(--bubble-float-delay) ease-in infinite;
+}
+.dashed-circle::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: hsla(183, 94%, 76%, 0.3);
+  border-radius: inherit;
+  animation: var(--bubble-sway-type) var(--bubble-sway-duration) var(--bubble-sway-delay) ease-in-out alternate infinite;
+}
+.dashed-circle:nth-child(0) {
+  --bubble-left-offset: 92vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 25s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 4s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle:nth-child(1) {
+  --bubble-left-offset: 38vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 25s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 0s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle:nth-child(2) {
+  --bubble-left-offset: 29vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 15s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 3s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle:nth-child(3) {
+  --bubble-left-offset: 89vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 19s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 4s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle:nth-child(4) {
+  --bubble-left-offset: 58vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 21s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 1s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle:nth-child(5) {
+  --bubble-left-offset: 60vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 23s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 1s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle:nth-child(6) {
+  --bubble-left-offset: 69vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 24s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 4s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle:nth-child(7) {
+  --bubble-left-offset: 18vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 25s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 2s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle:nth-child(8) {
+  --bubble-left-offset: 78vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 21s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 2s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle:nth-child(9) {
+  --bubble-left-offset: 71vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 25s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 1s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle:nth-child(10) {
+  --bubble-left-offset: 2vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 22s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 4s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle:nth-child(11) {
+  --bubble-left-offset: 93vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 21s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 4s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle:nth-child(12) {
+  --bubble-left-offset: 77vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 21s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 1s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle:nth-child(13) {
+  --bubble-left-offset: 44vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 23s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 3s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle:nth-child(14) {
+  --bubble-left-offset: 33vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 16s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 0s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle:nth-child(15) {
+  --bubble-left-offset: 49vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 22s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 1s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle:nth-child(16) {
+  --bubble-left-offset: 56vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 16s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 0s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle:nth-child(17) {
+  --bubble-left-offset: 20vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 25s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 4s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle:nth-child(18) {
+  --bubble-left-offset: 15vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 16s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 0s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle:nth-child(19) {
+  --bubble-left-offset: 52vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 16s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 2s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle:nth-child(20) {
+  --bubble-left-offset: 84vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 18s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 1s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle:nth-child(21) {
+  --bubble-left-offset: 7vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 20s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 1s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle:nth-child(22) {
+  --bubble-left-offset: 34vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 16s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 0s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle:nth-child(23) {
+  --bubble-left-offset: 72vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 16s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 2s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle:nth-child(24) {
+  --bubble-left-offset: 75vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 19s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 0s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle:nth-child(25) {
+  --bubble-left-offset: 24vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 15s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 1s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle:nth-child(26) {
+  --bubble-left-offset: 80vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 18s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 2s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle:nth-child(27) {
+  --bubble-left-offset: 25vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 19s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 4s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle:nth-child(28) {
+  --bubble-left-offset: 88vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 18s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 1s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle:nth-child(29) {
+  --bubble-left-offset: 99vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 19s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 4s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle:nth-child(30) {
+  --bubble-left-offset: 60vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 20s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 1s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle:nth-child(31) {
+  --bubble-left-offset: 35vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 25s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 4s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle:nth-child(32) {
+  --bubble-left-offset: 64vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 23s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 1s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle:nth-child(33) {
+  --bubble-left-offset: 95vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 17s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 1s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle:nth-child(34) {
+  --bubble-left-offset: 66vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 22s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 4s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle:nth-child(35) {
+  --bubble-left-offset: 97vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 16s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 3s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle:nth-child(36) {
+  --bubble-left-offset: 17vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 15s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 4s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle:nth-child(37) {
+  --bubble-left-offset: 48vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 22s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 4s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle:nth-child(38) {
+  --bubble-left-offset: 32vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 19s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 0s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle:nth-child(39) {
+  --bubble-left-offset: 16vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 15s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 3s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle:nth-child(40) {
+  --bubble-left-offset: 4vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 21s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 3s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle:nth-child(41) {
+  --bubble-left-offset: 90vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 23s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 4s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle:nth-child(42) {
+  --bubble-left-offset: 65vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 17s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 1s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle:nth-child(43) {
+  --bubble-left-offset: 55vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 20s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 3s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle:nth-child(44) {
+  --bubble-left-offset: 44vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 15s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 2s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle:nth-child(45) {
+  --bubble-left-offset: 30vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 18s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 1s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle:nth-child(46) {
+  --bubble-left-offset: 57vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 25s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 1s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle:nth-child(47) {
+  --bubble-left-offset: 82vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 21s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 2s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle:nth-child(48) {
+  --bubble-left-offset: 92vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 15s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 1s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle:nth-child(49) {
+  --bubble-left-offset: 30vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 23s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 0s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle:nth-child(50) {
+  --bubble-left-offset: 62vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 18s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 3s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+
+.dashed-circle:before {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 50%;
+  background: #991717;
+  content: "";
+}
+
+.dashed-circle:after {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 5px;
+  border: 3px dashed white;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.4);
+  content: "";
+}
+
+.dashed-circle-blue {
+  background: #1d4276;
+  border: 13px dashed white;
+  border-radius: 50%;
+  line-height: 100px;
+  text-align: center;
+  font-family: Georgia;
+  font-size: 1.5em;
+  color: white;
+  position: absolute;
+  left: var(--bubble-left-offset);
+  top: -75%;
+  display: block;
+  width: var(--bubble-radius);
+  height: var(--bubble-radius);
+  animation: float-up var(--bubble-float-duration) var(--bubble-float-delay) ease-in infinite;
+}
+.dashed-circle-blue::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: hsla(183, 94%, 76%, 0.3);
+  border-radius: inherit;
+  animation: var(--bubble-sway-type) var(--bubble-sway-duration) var(--bubble-sway-delay) ease-in-out alternate infinite;
+}
+.dashed-circle-blue:nth-child(0) {
+  --bubble-left-offset: 38vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 24s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 6s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-blue:nth-child(1) {
+  --bubble-left-offset: 18vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 20s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 1s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-blue:nth-child(2) {
+  --bubble-left-offset: 14vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 17s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 5s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-blue:nth-child(3) {
+  --bubble-left-offset: 24vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 15s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 7s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-blue:nth-child(4) {
+  --bubble-left-offset: -10vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 17s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 6s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-blue:nth-child(5) {
+  --bubble-left-offset: 107vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 17s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 7s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-blue:nth-child(6) {
+  --bubble-left-offset: 88vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 21s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 0s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-blue:nth-child(7) {
+  --bubble-left-offset: 74vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 16s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 6s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-blue:nth-child(8) {
+  --bubble-left-offset: 21vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 21s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 2s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-blue:nth-child(9) {
+  --bubble-left-offset: 22vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 23s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 2s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-blue:nth-child(10) {
+  --bubble-left-offset: 75vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 25s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 1s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-blue:nth-child(11) {
+  --bubble-left-offset: -9vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 16s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 8s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-blue:nth-child(12) {
+  --bubble-left-offset: 86vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 18s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 6s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-blue:nth-child(13) {
+  --bubble-left-offset: 59vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 24s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 6s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-blue:nth-child(14) {
+  --bubble-left-offset: 83vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 15s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 3s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-blue:nth-child(15) {
+  --bubble-left-offset: 58vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 16s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 4s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-blue:nth-child(16) {
+  --bubble-left-offset: 52vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 15s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 1s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-blue:nth-child(17) {
+  --bubble-left-offset: 5vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 24s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 2s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-blue:nth-child(18) {
+  --bubble-left-offset: 0vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 16s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 5s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-blue:nth-child(19) {
+  --bubble-left-offset: 84vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 20s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 2s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-blue:nth-child(20) {
+  --bubble-left-offset: 64vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 15s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 2s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-blue:nth-child(21) {
+  --bubble-left-offset: 109vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 16s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 2s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-blue:nth-child(22) {
+  --bubble-left-offset: 12vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 25s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 3s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-blue:nth-child(23) {
+  --bubble-left-offset: 107vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 17s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 0s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-blue:nth-child(24) {
+  --bubble-left-offset: 59vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 15s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 3s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-blue:nth-child(25) {
+  --bubble-left-offset: 75vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 15s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 3s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-blue:nth-child(26) {
+  --bubble-left-offset: 4vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 21s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 6s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-blue:nth-child(27) {
+  --bubble-left-offset: 73vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 16s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 6s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-blue:nth-child(28) {
+  --bubble-left-offset: 103vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 19s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 8s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-blue:nth-child(29) {
+  --bubble-left-offset: 33vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 20s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 7s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-blue:nth-child(30) {
+  --bubble-left-offset: 60vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 17s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 6s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-blue:nth-child(31) {
+  --bubble-left-offset: 107vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 15s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 7s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-blue:nth-child(32) {
+  --bubble-left-offset: 81vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 20s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 6s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-blue:nth-child(33) {
+  --bubble-left-offset: 95vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 18s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 5s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-blue:nth-child(34) {
+  --bubble-left-offset: -9vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 20s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 4s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-blue:nth-child(35) {
+  --bubble-left-offset: -3vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 20s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 1s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-blue:nth-child(36) {
+  --bubble-left-offset: -4vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 15s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 6s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-blue:nth-child(37) {
+  --bubble-left-offset: -10vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 19s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 7s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-blue:nth-child(38) {
+  --bubble-left-offset: -9vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 20s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 6s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-blue:nth-child(39) {
+  --bubble-left-offset: -3vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 20s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 3s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-blue:nth-child(40) {
+  --bubble-left-offset: 21vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 16s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 5s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-blue:nth-child(41) {
+  --bubble-left-offset: 87vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 21s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 4s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-blue:nth-child(42) {
+  --bubble-left-offset: 63vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 16s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 1s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-blue:nth-child(43) {
+  --bubble-left-offset: 55vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 25s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 2s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-blue:nth-child(44) {
+  --bubble-left-offset: 93vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 15s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 5s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-blue:nth-child(45) {
+  --bubble-left-offset: 21vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 21s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 7s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-blue:nth-child(46) {
+  --bubble-left-offset: 108vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 22s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 4s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-blue:nth-child(47) {
+  --bubble-left-offset: 45vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 25s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 5s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-blue:nth-child(48) {
+  --bubble-left-offset: 51vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 24s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 7s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-blue:nth-child(49) {
+  --bubble-left-offset: 45vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 25s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 1s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-blue:nth-child(50) {
+  --bubble-left-offset: 33vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 17s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 2s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+
+.dashed-circle-blue:before {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 50%;
+  background: #1d4276;
+  content: "";
+}
+
+.dashed-circle-blue:after {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 5px;
+  border: 3px dashed white;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.4);
+  content: "";
+}
+
+.dashed-circle-green {
+  background: #248721;
+  border: 13px dashed white;
+  border-radius: 50%;
+  line-height: 100px;
+  text-align: center;
+  font-family: Georgia;
+  font-size: 1.5em;
+  color: white;
+  position: absolute;
+  left: var(--bubble-left-offset);
+  top: -75%;
+  display: block;
+  width: var(--bubble-radius);
+  height: var(--bubble-radius);
+  animation: float-up var(--bubble-float-duration) var(--bubble-float-delay) ease-in infinite;
+}
+.dashed-circle-green::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: hsla(183, 94%, 76%, 0.3);
+  border-radius: inherit;
+  animation: var(--bubble-sway-type) var(--bubble-sway-duration) var(--bubble-sway-delay) ease-in-out alternate infinite;
+}
+.dashed-circle-green:nth-child(0) {
+  --bubble-left-offset: 78vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 17s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 3s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-green:nth-child(1) {
+  --bubble-left-offset: 1vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 19s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 5s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-green:nth-child(2) {
+  --bubble-left-offset: 95vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 24s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 2s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-green:nth-child(3) {
+  --bubble-left-offset: 73vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 22s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 5s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-green:nth-child(4) {
+  --bubble-left-offset: 76vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 15s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 5s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-green:nth-child(5) {
+  --bubble-left-offset: 48vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 25s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 4s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-green:nth-child(6) {
+  --bubble-left-offset: 45vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 16s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 3s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-green:nth-child(7) {
+  --bubble-left-offset: 92vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 21s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 6s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-green:nth-child(8) {
+  --bubble-left-offset: 26vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 17s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 7s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-green:nth-child(9) {
+  --bubble-left-offset: 35vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 25s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 5s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-green:nth-child(10) {
+  --bubble-left-offset: 9vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 16s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 8s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-green:nth-child(11) {
+  --bubble-left-offset: 20vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 22s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 1s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-green:nth-child(12) {
+  --bubble-left-offset: 1vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 25s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 1s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-green:nth-child(13) {
+  --bubble-left-offset: 45vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 19s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 8s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-green:nth-child(14) {
+  --bubble-left-offset: 49vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 23s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 6s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-green:nth-child(15) {
+  --bubble-left-offset: 90vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 22s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 8s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-green:nth-child(16) {
+  --bubble-left-offset: 67vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 17s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 7s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-green:nth-child(17) {
+  --bubble-left-offset: 98vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 15s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 3s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-green:nth-child(18) {
+  --bubble-left-offset: 39vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 20s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 6s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-green:nth-child(19) {
+  --bubble-left-offset: 11vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 18s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 5s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-green:nth-child(20) {
+  --bubble-left-offset: 92vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 20s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 5s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-green:nth-child(21) {
+  --bubble-left-offset: 41vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 23s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 1s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-green:nth-child(22) {
+  --bubble-left-offset: 94vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 21s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 3s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-green:nth-child(23) {
+  --bubble-left-offset: 8vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 25s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 7s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-green:nth-child(24) {
+  --bubble-left-offset: 29vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 20s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 5s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-green:nth-child(25) {
+  --bubble-left-offset: 39vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 23s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 7s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-green:nth-child(26) {
+  --bubble-left-offset: 52vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 22s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 0s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-green:nth-child(27) {
+  --bubble-left-offset: 15vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 23s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 5s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-green:nth-child(28) {
+  --bubble-left-offset: 65vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 17s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 1s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-green:nth-child(29) {
+  --bubble-left-offset: 55vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 15s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 6s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-green:nth-child(30) {
+  --bubble-left-offset: 44vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 25s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 7s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-green:nth-child(31) {
+  --bubble-left-offset: 10vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 19s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 3s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-green:nth-child(32) {
+  --bubble-left-offset: 67vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 22s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 0s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-green:nth-child(33) {
+  --bubble-left-offset: 87vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 24s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 1s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-green:nth-child(34) {
+  --bubble-left-offset: 81vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 21s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 0s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-green:nth-child(35) {
+  --bubble-left-offset: 98vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 23s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 3s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-green:nth-child(36) {
+  --bubble-left-offset: 43vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 18s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 8s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-green:nth-child(37) {
+  --bubble-left-offset: 73vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 23s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 5s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-green:nth-child(38) {
+  --bubble-left-offset: 73vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 17s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 5s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-green:nth-child(39) {
+  --bubble-left-offset: 28vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 25s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 4s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-green:nth-child(40) {
+  --bubble-left-offset: 57vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 25s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 5s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-green:nth-child(41) {
+  --bubble-left-offset: 89vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 20s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 1s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-green:nth-child(42) {
+  --bubble-left-offset: 18vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 23s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 3s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-green:nth-child(43) {
+  --bubble-left-offset: 63vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 20s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 1s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-green:nth-child(44) {
+  --bubble-left-offset: 6vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 18s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 3s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-green:nth-child(45) {
+  --bubble-left-offset: 8vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 18s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 2s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-green:nth-child(46) {
+  --bubble-left-offset: 41vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 23s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 6s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-green:nth-child(47) {
+  --bubble-left-offset: 55vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 16s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 8s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-green:nth-child(48) {
+  --bubble-left-offset: 40vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 17s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 2s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-green:nth-child(49) {
+  --bubble-left-offset: 24vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 22s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 7s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-green:nth-child(50) {
+  --bubble-left-offset: 61vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 19s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 2s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+
+.dashed-circle-green:before {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 50%;
+  background: #248721;
+  content: "";
+}
+
+.dashed-circle-green:after {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 5px;
+  border: 3px dashed white;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.4);
+  content: "";
+}
+
+.dashed-circle-black {
+  background: #000000;
+  border: 13px dashed white;
+  border-radius: 50%;
+  line-height: 100px;
+  text-align: center;
+  font-family: Georgia;
+  font-size: 1.5em;
+  color: white;
+  position: absolute;
+  left: var(--bubble-left-offset);
+  top: -75%;
+  display: block;
+  width: var(--bubble-radius);
+  height: var(--bubble-radius);
+  animation: float-up var(--bubble-float-duration) var(--bubble-float-delay) ease-in infinite;
+}
+.dashed-circle-black::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: hsla(183, 94%, 76%, 0.3);
+  border-radius: inherit;
+  animation: var(--bubble-sway-type) var(--bubble-sway-duration) var(--bubble-sway-delay) ease-in-out alternate infinite;
+}
+.dashed-circle-black:nth-child(0) {
+  --bubble-left-offset: 8vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 22s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 4s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-black:nth-child(1) {
+  --bubble-left-offset: 33vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 25s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 8s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-black:nth-child(2) {
+  --bubble-left-offset: 9vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 22s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 1s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-black:nth-child(3) {
+  --bubble-left-offset: 6vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 16s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 8s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-black:nth-child(4) {
+  --bubble-left-offset: 80vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 22s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 4s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-black:nth-child(5) {
+  --bubble-left-offset: 71vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 20s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 2s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-black:nth-child(6) {
+  --bubble-left-offset: 69vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 17s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 5s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-black:nth-child(7) {
+  --bubble-left-offset: 66vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 24s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 6s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-black:nth-child(8) {
+  --bubble-left-offset: 27vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 19s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 2s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-black:nth-child(9) {
+  --bubble-left-offset: 18vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 15s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 0s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-black:nth-child(10) {
+  --bubble-left-offset: 9vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 24s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 8s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-black:nth-child(11) {
+  --bubble-left-offset: 7vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 19s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 8s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-black:nth-child(12) {
+  --bubble-left-offset: 44vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 16s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 4s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-black:nth-child(13) {
+  --bubble-left-offset: 26vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 23s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 8s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-black:nth-child(14) {
+  --bubble-left-offset: 21vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 23s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 3s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-black:nth-child(15) {
+  --bubble-left-offset: 80vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 20s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 7s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-black:nth-child(16) {
+  --bubble-left-offset: 45vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 19s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 6s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-black:nth-child(17) {
+  --bubble-left-offset: 87vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 22s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 5s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-black:nth-child(18) {
+  --bubble-left-offset: 24vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 25s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 5s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-black:nth-child(19) {
+  --bubble-left-offset: 79vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 22s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 5s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-black:nth-child(20) {
+  --bubble-left-offset: 38vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 20s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 5s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-black:nth-child(21) {
+  --bubble-left-offset: 80vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 24s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 2s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-black:nth-child(22) {
+  --bubble-left-offset: 53vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 18s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 0s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-black:nth-child(23) {
+  --bubble-left-offset: 94vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 22s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 0s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-black:nth-child(24) {
+  --bubble-left-offset: 22vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 21s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 7s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-black:nth-child(25) {
+  --bubble-left-offset: 11vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 15s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 5s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-black:nth-child(26) {
+  --bubble-left-offset: 77vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 21s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 2s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-black:nth-child(27) {
+  --bubble-left-offset: 24vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 15s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 4s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-black:nth-child(28) {
+  --bubble-left-offset: 90vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 25s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 6s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-black:nth-child(29) {
+  --bubble-left-offset: 49vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 19s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 3s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-black:nth-child(30) {
+  --bubble-left-offset: 35vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 15s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 0s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-black:nth-child(31) {
+  --bubble-left-offset: 52vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 24s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 5s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-black:nth-child(32) {
+  --bubble-left-offset: 7vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 18s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 8s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-black:nth-child(33) {
+  --bubble-left-offset: 4vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 22s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 2s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-black:nth-child(34) {
+  --bubble-left-offset: 92vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 16s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 2s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-black:nth-child(35) {
+  --bubble-left-offset: 27vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 24s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 1s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-black:nth-child(36) {
+  --bubble-left-offset: 26vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 21s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 6s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-black:nth-child(37) {
+  --bubble-left-offset: 77vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 15s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 2s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-black:nth-child(38) {
+  --bubble-left-offset: 68vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 19s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 5s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-black:nth-child(39) {
+  --bubble-left-offset: 37vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 21s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 4s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-black:nth-child(40) {
+  --bubble-left-offset: 55vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 17s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 7s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-black:nth-child(41) {
+  --bubble-left-offset: 88vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 18s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 3s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-black:nth-child(42) {
+  --bubble-left-offset: 45vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 19s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 5s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-black:nth-child(43) {
+  --bubble-left-offset: 11vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 21s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 6s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-black:nth-child(44) {
+  --bubble-left-offset: 71vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 15s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 8s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-black:nth-child(45) {
+  --bubble-left-offset: 84vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 18s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 8s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-black:nth-child(46) {
+  --bubble-left-offset: 37vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 18s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 5s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-black:nth-child(47) {
+  --bubble-left-offset: 98vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 21s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 0s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-black:nth-child(48) {
+  --bubble-left-offset: 23vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 16s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 4s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+.dashed-circle-black:nth-child(49) {
+  --bubble-left-offset: 63vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 15s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 1s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-left-to-right;
+}
+.dashed-circle-black:nth-child(50) {
+  --bubble-left-offset: 27vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 17s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 4s;
+  --bubble-sway-delay: #
+  --bubble-sway-type: sway-right-to-left;
+}
+
+.dashed-circle-black:before {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 50%;
+  background: #000000;
+  content: "";
+}
+
+.dashed-circle-black:after {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 5px;
+  border: 3px dashed white;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.4);
+  content: "";
+}/*# sourceMappingURL=style.css.map */
